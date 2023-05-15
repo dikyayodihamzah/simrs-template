@@ -318,8 +318,6 @@
     }, 200);
   }
 
-<<<<<<< HEAD
-=======
   const container = document.querySelector(".container");
   const seats = document.querySelectorAll(".row.seat:not(.occupied)");
   const count = document.getElementById("count");
@@ -391,5 +389,4 @@
   updateSelectedCount();
 
 
->>>>>>> f6267f7 (added denah html)
 })();
