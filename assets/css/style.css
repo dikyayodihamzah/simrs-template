@@ -1234,8 +1234,6 @@ h6 {
 
 .form {
   display: inline-block;
-<<<<<<< HEAD
-=======
 }
 
 .position-relative-example {
@@ -1258,7 +1256,7 @@ h6 {
 
 .movie-container select {
   background-color: #fff;
-  border: 0;
+  border: solid;
   border-radius: 5px;
   font-size: 14px;
   margin-left: 10px;
@@ -1341,5 +1339,4 @@ p.text {
 
 p.text span {
   color: #6feaf6;
->>>>>>> f6267f7 (added denah html)
 }
