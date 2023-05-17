@@ -1280,6 +1280,10 @@ h6 {
   border-top-right-radius: 6px;
 }
 
+.seat.terpakai {
+  background-color: red;
+}
+
 .seat.selected {
   background-color: lightgreen;
 }
