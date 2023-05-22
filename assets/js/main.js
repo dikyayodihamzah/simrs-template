@@ -318,43 +318,5 @@
     }, 200);
   }
 
-  const container = document.querySelector(".container");
-  const container2 = document.querySelector(".container2");
-  const containerV = document.querySelector(".containerV");
-
-  //Seat click event
-  container.addEventListener('click', e => {
-    if (
-      e.target.classList.contains('seat') &&
-      !e.target.classList.contains('occupied') &&
-      !e.target.classList.contains('terpakai')
-    ) {
-      e.target.classList.toggle('selected');
-
-    }
-  });
-
-  container2.addEventListener('click', e => {
-    if (
-      e.target.classList.contains('seat') &&
-      !e.target.classList.contains('occupied') &&
-      !e.target.classList.contains('terpakai')
-    ) {
-      e.target.classList.toggle('selected');
-
-    }
-  });
-
-  containerV.addEventListener('click', e => {
-    if (
-      e.target.classList.contains('seat') &&
-      !e.target.classList.contains('occupied') &&
-      !e.target.classList.contains('terpakai')
-    ) {
-      e.target.classList.toggle('selected');
-
-    }
-  });
-
 
 })();
