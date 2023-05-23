@@ -50,7 +50,7 @@
     <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">
       <div class="d-flex align-items-center justify-content-between">
-        <a href="dashboard.html" class="logo d-flex align-items-center">
+        <a href="pages-dashboard.html" class="logo d-flex align-items-center">
           <img src="assets/img/logo.png" alt="" />
           <span class="d-none d-lg-block">SIMRS</span>
         </a>
@@ -60,28 +60,14 @@
 
       <nav class="header-nav ms-auto">
         <ul class="d-flex align-items-center">
-          <li class="nav-item d-block d-lg-none">
-            <a class="nav-link nav-icon search-bar-toggle" href="#">
-              <i class="bi bi-search"></i>
-            </a>
-          </li>
-          <!-- End Search Icon-->
-
           <li class="nav-item dropdown pe-3">
             <a
               class="nav-link nav-profile d-flex align-items-center pe-0"
               href="#"
               data-bs-toggle="dropdown"
             >
-              <img
-                src="assets/img/profile-img.jpg"
-                alt="Profile"
-                class="rounded-circle"
-              />
-              <span class="d-none d-md-block dropdown-toggle ps-2"
-                >Admin</span
-              > </a
-            ><!-- End Profile Iamge Icon -->
+              <span class="d-none d-md-block dropdown-toggle ps-2">Admin</span>
+            </a>
 
             <ul
               class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile"
@@ -106,7 +92,7 @@
     <aside id="sidebar" class="sidebar">
       <ul class="sidebar-nav" id="sidebar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="dashboard.html">
+          <a class="nav-link" href="pages-dashboard.html">
             <i class="bi bi-grid"></i>
             <span>Dashboard</span>
           </a>
@@ -129,12 +115,12 @@
         </li>
         <!-- End Patient Nav -->
 
-        <li class="nav-heading">Others</li>
+        <li class="nav-heading">Lainnya</li>
 
         <li class="nav-item">
           <a class="nav-link collapsed" href="pages-faq.html">
             <i class="bi bi-question-circle"></i>
-            <span>About</span>
+            <span>Tentang Kami</span>
           </a>
         </li>
         <!-- End F.A.Q Page Nav -->
@@ -152,11 +138,13 @@
 
     <main id="main" class="main">
       <div class="pagetitle">
-        <h1>Dashboard</h1>
+        <h1>{{ .Title }}</h1>
         <nav>
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="dashboard.html">Home</a></li>
-            <li class="breadcrumb-item active">Dashboard</li>
+            <li class="breadcrumb-item">
+              <a href="pages-dashboard.html">Home</a>
+            </li>
+            <li class="breadcrumb-item active">{{ .Title }}</li>
           </ol>
         </nav>
       </div>
@@ -164,66 +152,14 @@
 
       <section class="section dashboard">
         <div class="row">
-          <!-- Left side columns -->
           <div class="col-lg-12">
+            <!-- first row summary -->
             <div class="row">
-              <!-- Sales Card -->
-              <div class="col-xxl-4 col-md-6">
-                <div class="card info-card sales-card">                 
+              <!-- Total Patient Card -->
+              <div class="col-md-5 col-xl-6">
+                <div class="card info-card total-patient-card">
                   <div class="card-body">
-                    <h5 class="card-title">
-                      Kamar Terpakai
-                    </h5>
-
-                    <div class="d-flex align-items-center">
-                      <div
-                        class="card-icon rounded-circle d-flex align-items-center justify-content-center"
-                      >
-                        <i class="ri-hotel-bed-line"></i>
-                      </div>
-                      <div class="ps-3">
-                        <h6>145</h6>
-                        <span class="text-success small pt-1 fw-bold">12%</span>
-                        <span class="text-muted small pt-2 ps-1">peningkatan</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- End Sales Card -->
-
-              <!-- Revenue Card -->
-              <div class="col-xxl-4 col-md-6">
-                <div class="card info-card revenue-card">                 
-                  <div class="card-body">
-                    <h5 class="card-title">
-                      Jumlah Kamar
-                    </h5>
-
-                    <div class="d-flex align-items-center">
-                      <div
-                        class="card-icon rounded-circle d-flex align-items-center justify-content-center"
-                      >
-                        <i class="bx bx-bed"></i>
-                      </div>
-                      <div class="ps-3">
-                        <h6>290</h6>
-                        <span class="text-success small pt-1 fw-bold">50%</span>
-                        <span class="text-muted small pt-2 ps-1">terpakai</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- End Revenue Card -->
-
-              <!-- Customers Card -->
-              <div class="col-xxl-4 col-xl-12">
-                <div class="card info-card customers-card">                 
-                  <div class="card-body">
-                    <h5 class="card-title">
-                      Total Pasien
-                    </h5>
+                    <h5 class="card-title">Jumlah Pasien</h5>
 
                     <div class="d-flex align-items-center">
                       <div
@@ -232,108 +168,147 @@
                         <i class="bi bi-people"></i>
                       </div>
                       <div class="ps-3">
-                        <h6>1244</h6>
-                        <span class="text-danger small pt-1 fw-bold">12%</span>
-                        <span class="text-muted small pt-2 ps-1">penurunan</span>
+                        <h6>{{ .TotalPatient}}</h6>
+                        <span class="text-muted small pt-3 ps-1"
+                          >dari total kapasitas</span
+                        >
+                        <span class="text-danger medium pt-5 fw-bold"
+                          >{{ .TotalBed}}</span
+                        >
+                        <span class="text-muted small pt-3 ps-1">pasien</span>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <!-- End Customers Card -->
+              <!-- End Total Patient Card -->
 
-              <!-- Recent Sales -->
-              <div class="col-12">
-                <div class="card recent-sales overflow-auto">
+              <!-- Revenue Card -->
+              <div class="col-md-5 col-xl-6">
+                <div class="card info-card total-bed-card">
                   <div class="card-body">
-                    <h5 class="card-title">
-                      Daftar Pasien
-                    </h5>
-
-                    <table class="table table-borderless datatable">
-                      <thead>
-                        <tr>
-                          <th scope="col">#</th>
-                          <th scope="col">Nama</th>
-                          <th scope="col">Alamat</th>
-                          <th scope="col">Usia</th>
-                          <th scope="col">Status</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th scope="row"><a href="#">#2457</a></th>
-                          <td>Brandon Jacob</td>
-                          <td>
-                            <a href="#" class="text-primary"
-                              >At praesentium minu</a
-                            >
-                          </td>
-                          <td>64</td>
-                          <td>
-                            <span class="badge bg-success">Approved</span>
-                          </td>
-                        </tr>
-                        <tr>
-                          <th scope="row"><a href="#">#2147</a></th>
-                          <td>Bridie Kessler</td>
-                          <td>
-                            <a href="#" class="text-primary"
-                              >Blanditiis dolor omnis similique</a
-                            >
-                          </td>
-                          <td>47</td>
-                          <td><span class="badge bg-warning">Pending</span></td>
-                        </tr>
-                        <tr>
-                          <th scope="row"><a href="#">#2049</a></th>
-                          <td>Ashleigh Langosh</td>
-                          <td>
-                            <a href="#" class="text-primary"
-                              >At recusandae consectetur</a
-                            >
-                          </td>
-                          <td>17</td>
-                          <td>
-                            <span class="badge bg-success">Approved</span>
-                          </td>
-                        </tr>
-                        <tr>
-                          <th scope="row"><a href="#">#2644</a></th>
-                          <td>Angus Grady</td>
-                          <td>
-                            <a href="#" class="text-primar"
-                              >Ut voluptatem id earum et</a
-                            >
-                          </td>
-                          <td>67</td>
-                          <td><span class="badge bg-danger">Rejected</span></td>
-                        </tr>
-                        <tr>
-                          <th scope="row"><a href="#">#2644</a></th>
-                          <td>Raheem Lehner</td>
-                          <td>
-                            <a href="#" class="text-primary"
-                              >Sunt similique distinctio</a
-                            >
-                          </td>
-                          <td>65</td>
-                          <td>
-                            <span class="badge bg-success">Approved</span>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+                    <h5 class="card-title">Jumlah Kamar</h5>
+                    <div class="d-flex align-items-center">
+                      <div
+                        class="card-icon rounded-circle d-flex align-items-center justify-content-center"
+                      >
+                        <i class="bx bx-bed"></i>
+                      </div>
+                      <div class="ps-3">
+                        <h6>{{ .UsedRoom}}</h6>
+                        <span class="text-muted small pt-3 ps-1"
+                          >terpakai dari total</span
+                        >
+                        <span class="text-danger medium pt-5 fw-bold"
+                          >{{ .TotalRoom}}</span
+                        >
+                        <span class="text-muted small pt-3 ps-1">kamar</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-              <!-- End Recent Sales -->
+              <!-- End Revenue Card -->
+            </div>
+
+            <!-- Second Row Summary -->
+            <div class="row">
+              <!-- VIP Bed Card -->
+              <div class="col-xxl-4 col-md-6">
+                <div class="card info-card vip-card">
+                  <div class="card-body">
+                    <h5 class="card-title">Kamar VIP</h5>
+
+                    <div class="d-flex align-items-center">
+                      <div
+                        class="card-icon rounded-circle d-flex align-items-center justify-content-center"
+                      >
+                        <i class="ri-hotel-bed-line"></i>
+                      </div>
+                      <div class="ps-3">
+                        <h6>{{ .VIPPatient}}</h6>
+                        <span class="text-muted small pt-3 ps-1"
+                          >dari total</span
+                        >
+                        <span class="text-danger medium pt-5 fw-bold"
+                          >{{ .VIPBed}}</span
+                        >
+                        <span class="text-muted small pt-3 ps-1"
+                          >tempat tidur</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- VIP Bed Card -->
+
+              <!-- 1-Class Card -->
+              <div class="col-xxl-4 col-md-6">
+                <div class="card info-card first-class-card">
+                  <div class="card-body">
+                    <h5 class="card-title">Kamar Kelas 1</h5>
+
+                    <div class="d-flex align-items-center">
+                      <div
+                        class="card-icon rounded-circle d-flex align-items-center justify-content-center"
+                      >
+                        <i class="ri-hotel-bed-line"></i>
+                      </div>
+                      <div class="ps-3">
+                        <h6>{{ .FirstClassPatient}}</h6>
+                        <span class="text-muted small pt-3 ps-1"
+                          >dari total</span
+                        >
+                        <span class="text-danger medium pt-5 fw-bold"
+                          >{{ .FirstClassBed}}</span
+                        >
+                        <span class="text-muted small pt-3 ps-1"
+                          >tempat tidur</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End 1-Class Card -->
+
+              <!-- 2-Class Card -->
+              <div class="col-xxl-4 col-md-6">
+                <div class="card info-card second-class-card">
+                  <div class="card-body">
+                    <h5 class="card-title">Total Kelas 2</h5>
+
+                    <div class="d-flex align-items-center">
+                      <div
+                        class="card-icon rounded-circle d-flex align-items-center justify-content-center"
+                      >
+                        <i class="ri-hotel-bed-line"></i>
+                      </div>
+                      <div class="ps-3">
+                        <h6>{{ .SecondClassPatient}}</h6>
+                        <span class="text-muted small pt-3 ps-1"
+                          >dari total</span
+                        >
+                        <span class="text-danger medium pt-5 fw-bold"
+                          >{{ .SecondClassBed}}</span
+                        >
+                        <span class="text-muted small pt-3 ps-1"
+                          >tempat tidur</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End 2-Class Card -->
             </div>
           </div>
           <!-- End Left side columns -->
         </div>
       </section>
     </main>
+
     <!-- End #main -->
 
     <!-- Vendor JS Files -->
