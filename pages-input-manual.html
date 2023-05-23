@@ -153,34 +153,34 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Rekomendasi Kamar</h1>
+      <h1>Input Pasien</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="dashboard.html">Home</a></li>
           <li class="breadcrumb-item"><a href="pages-data-pasien.html">Data Pasien</a></li>
           <li class="breadcrumb-item"><a href="pages-input-pasien.html">Input Pasien</a></li>
-          <li class="breadcrumb-item active">Rekomendasi Kamar</li>
+          <li class="breadcrumb-item">Rekomendasi Kamar</li>
+          <li class="breadcrumb-item active">Input Manual</li>
         </ol>
-      </nav>
-    </div><!-- End Page Title -->  
+      </nav>  
 
     <section class="section">
       <div class="row">
         <div class="card">           
           <div class="card-body">
-            <h5 class="card-title text-center">Rekomendasi Kamar</h5>
+            <h5 class="card-title">Input Kamar Manual</h5>
               <!-- General Form Elements -->
-              <h6 class="text-center">Kamar yang Disarankan : </h6>
-              <h3 class="text-center"><strong>Kamar 505</strong></h3>
-              <div class="text-center">
-                <a href="pages-input-manual.html">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Input Manual</button>
-                </a>
-                <button type="button" class="btn btn-primary">Setuju</button>
-              </div>   
+              <form class="row g-3">              
+                <div class="col">
+                  <div class="input-group mb-3">
+                    <input type="number" class="form-control" id="inputNumber">
+                    <span type="submit" class="btn btn-primary">Submit Form</span>
+                  </div>
+                </div>
+              </form><!-- End General Form Elements -->
           </div>
-        </div>       
-      </div> 
+        </div>
+      </div>    
     </section>
 
   </main><!-- End #main -->
